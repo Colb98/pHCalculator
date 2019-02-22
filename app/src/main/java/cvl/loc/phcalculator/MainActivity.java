@@ -142,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         mCLayout.setHint("Nồng độ acid");
         mSolType.setText("Dung dịch đệm");
         mSwitchLabel.setText("Loại dung dịch");
+        mKLayout.setHint("Ka");
         mKExpEditText.setText("0");
         mSwitchLabel.setVisibility(View.GONE);
         mSwitch.setVisibility(View.GONE);
