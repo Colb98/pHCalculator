@@ -13,6 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -269,6 +270,13 @@ public class MainActivity extends AppCompatActivity {
         mButtonCopy = findViewById(R.id.copy_button);
         mLookupImageView = findViewById(R.id.lookup_image_view);
 
+        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                typeSwitchOnClick();
+            }
+        });
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
@@ -393,7 +401,7 @@ public class MainActivity extends AppCompatActivity {
         mKEditText.setText("");
     }
 
-    public void typeSwitchOnClick(View view) {
+    public void typeSwitchOnClick() {
         if(solType == STRONG_ACID || solType == WEAK_ACID)
             solType += 1;
         else if(solType == STRONG_BASE || solType == WEAK_BASE)
